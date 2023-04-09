@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %} {% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    </head>
+
+    <body>
+        <div class="canvas">
+            
+            <div class="navbar">
+                <div id="navbar_left">
+                    
+                </div>
+
+                <div id="navbar_right">
+                    <a id="navbar_home" href="{{url_for('index')}}">
+                        ABOUT
+                    </a>
+
+                    <a id="navbar_signin" href="{{url_for('signin')}}">
+                        SIGN IN
+                    </a>
+            
+                    <a id="navbar_signup" href="{{url_for('signup')}}">
+                        SIGN UP
+                    </a>
+                </div>
+            </div>
+            
+            <div class="maincontent">
+                {% block content %} {% endblock %}
+            </div>
+
+            <div class="footer">
+                FOOTER               
+            </div>
+
+        </div>
+    </body>
+</html>
