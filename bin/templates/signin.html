@@ -6,9 +6,23 @@
 
 {% block content %}
     <div id="signin_maincontent">
-        <h1>
-            SIGN IN page
-        </h1>
+        <form id="signin_form" action="{{url_for('signin')}}" method="POST">
+            <label id="signin_text">SIGN IN</label>
+            <input name="username" id="signin_input_field" placeholder="Username" value="{{username if username}}">
+            <br>  
+            <input name="password" id="signin_password_field" placeholder="Password" value="{{password if password}}">
+            <br>
+
+            <label for="user_type">YOU ARE?</label>
+            <select id="signin_dropdown" name="user_type" form="signin_form">
+                <option value="student">Student</option>
+                <option value="employee">Staff</option>
+            </select>
+            
+            <br><br>
+
+            <input type="submit" id="signin_submit" value="SUBMIT"><br>
+        </form>
     </div>
 {% endblock %}
 

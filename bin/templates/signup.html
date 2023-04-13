@@ -6,9 +6,32 @@
 
 {% block content %}
     <div id="signup_maincontent">
-        <h1>
-            SIGN UP page
-        </h1>
+        <form id="signup_form" action="{{url_for('signup')}}" method="POST">
+            <label id="signup_text">SIGN UP</label>
+            <input name="username" id="signup_input_field" placeholder="Create Username">
+            <br>  
+            <input name="password" id="signup_password_field" placeholder="Create Password">
+            <br>
+            <label id="signup_field1" for="">ENTER DETAILS</label>
+            <input name="sname" id="signup_student_name" placeholder="Full Name">
+            <br>
+            <input name="email" id="signup_email" placeholder="Email">
+            <br>
+            <input name="cno" id="signup_contact" placeholder="Contact Number">
+            <br>
+            <input name="enyear" id="signup_enroll_year" placeholder="Enrollment Year">
+            <br>
+
+            <label for="user_type">YOU ARE?</label>
+            <select id="signup_dropdown" name="user_type" form="signup_form">
+                <option value="student">Student</option>
+                <option value="employee">Staff</option>
+            </select>
+            
+            <br><br>
+
+            <input type="submit" id="signup_submit" value="SUBMIT"><br>
+        </form>
     </div>
 {% endblock %}
 
